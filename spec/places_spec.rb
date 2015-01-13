@@ -6,10 +6,10 @@ describe(Places) do
     Places.clear()
   end
 
-  describe("#place") do
+  describe("#new_place") do
     it("allows you to enter name of place") do
       test_location = Places.new("Toledo")
-      expect(test_location.place()).to eq("Toledo")
+      expect(test_location.new_place()).to eq("Toledo")
     end
   end
 

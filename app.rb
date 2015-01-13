@@ -1,14 +1,16 @@
-require('sinatra')
-require('sinatra/reloader')
-also_reload('lib/**/*.rb')
-require('./lib/places')
+require("sinatra")
+require("sinatra/reloader")
+also_reload("lib/**/*.rb")
+require("./lib/places")
 
-get('/') do
-  erb(:form)
+get("/") do
+  @place = Places.all()
+  erb(:index)
 end
 
-get('/results') do
-
-  #@result_string = phrase.method_name()
+post("/places") do
+  new_place = params.fetch("new_place")
+  places = Places.new(new_place)
+  places.save()
   erb(:results)
 end

@@ -1,0 +1,20 @@
+<h1>Places</h1>
+
+<p>Here is your list of places:</p>
+
+<ul>
+  <% @place.each() do |place| %>
+  <li><%= place.new_place() %></li>
+  <% end %>
+</ul>
+
+<p>Add a new place:</p>
+
+<form action="/places" method="post">
+  <div class="form-group">
+    <label for="new_place">Please enter a place you'd like to visit:</label>
+    <input id="new_place" name="new_place" class="form-control" type="text" autofocus>
+  </div>
+
+  <button type="submit" class="btn">Submit</button>
+</form>

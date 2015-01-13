@@ -1,12 +1,12 @@
 class Places
   @@all_places = []
 
-  define_method(:initialize) do |place|
-    @place = place
+  define_method(:initialize) do |new_place|
+    @new_place = new_place
   end
 
-  define_method(:place) do
-    @place
+  define_method(:new_place) do
+    @new_place
   end
 
   define_singleton_method(:all) do
