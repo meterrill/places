@@ -12,5 +12,10 @@ post("/places") do
   new_place = params.fetch("new_place")
   places = Places.new(new_place)
   places.save()
-  erb(:results)
+  erb(redirect to("/"))
+end
+
+post("/") do
+  @place = Places.clear()
+  erb(:index)
 end

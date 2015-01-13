@@ -1,13 +1,5 @@
 <h1>Places</h1>
 
-<p>Here is your list of places:</p>
-
-<ul>
-  <% @place.each() do |place| %>
-  <li><%= place.new_place() %></li>
-  <% end %>
-</ul>
-
 <p>Add a new place:</p>
 
 <form action="/places" method="post">
@@ -17,4 +9,16 @@
   </div>
 
   <button type="submit" class="btn">Submit</button>
+</form>
+
+<p>Here is your list of places:</p>
+
+<ul>
+  <% @place.each() do |place| %>
+  <li><%= place.new_place() %></li>
+  <% end %>
+</ul>
+
+<form  action="/" method="post">
+  <button type="submit" class="btn">Clear List</button>
 </form>
